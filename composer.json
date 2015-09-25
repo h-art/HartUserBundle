@@ -1,0 +1,21 @@
+{
+  "name": "hart/user-bundle",
+  "type": "symfony-bundle",
+  "description": "Symfony HartUserBundle",
+  "keywords": ["user", "hart"],
+  "homepage": "https://github.com/h-art",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "H-ART",
+      "homepage": "https://github.com/h-art/HartUserBundle/contributors"
+    }
+  ],
+  "require": {
+    "sonata-project/user-bundle": "2.3.x-dev",
+    "sonata-project/datagrid-bundle": "2.2.x-dev"
+  },
+  "autoload": {
+    "psr-4": { "Hart\\UserBundle\\": "" }
+  }
+}
