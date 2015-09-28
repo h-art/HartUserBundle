@@ -3,12 +3,11 @@
 namespace Hart\UserBundle\Model;
 
 use FOS\UserBundle\Entity\User as AbstractedUser;
-use Sonata\UserBundle\Model\UserInterface;
 
 /**
  * Represents a User model
  */
-abstract class User extends AbstractedUser implements UserInterface
+abstract class User extends AbstractedUser
 {
     /**
      * @var \DateTime
@@ -19,11 +18,6 @@ abstract class User extends AbstractedUser implements UserInterface
      * @var \DateTime
      */
     protected $updatedAt;
-
-    /**
-     * @var string
-     */
-    protected $twoStepVerificationCode;
 
     /**
      * @var string
@@ -96,16 +90,6 @@ abstract class User extends AbstractedUser implements UserInterface
     }
 
     /**
-     * Sets the credentials expiration date
-     *
-     * @param \DateTime|null $date
-     */
-    public function setCredentialsExpireAt(\DateTime $date = null)
-    {
-        $this->credentialsExpireAt = $date;
-    }
-
-    /**
      * Returns a string representation
      *
      * @return string
@@ -125,26 +109,6 @@ abstract class User extends AbstractedUser implements UserInterface
         foreach ($groups as $group) {
             $this->addGroup($group);
         }
-    }
-
-    /**
-     * Sets the two-step verification code
-     *
-     * @param string $twoStepVerificationCode
-     */
-    public function setTwoStepVerificationCode($twoStepVerificationCode)
-    {
-        $this->twoStepVerificationCode = $twoStepVerificationCode;
-    }
-
-    /**
-     * Returns the two-step verification code
-     *
-     * @return string
-     */
-    public function getTwoStepVerificationCode()
-    {
-        return $this->twoStepVerificationCode;
     }
 
     /**

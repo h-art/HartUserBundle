@@ -81,18 +81,6 @@ class BaseUserTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($user->hasGroup('Group 2'), 'Should have a group named "Group 2"');
     }
 
-    public function testTwoStepVerificationCode()
-    {
-        // Given
-        $user = new BaseUser();
-
-        // When
-        $user->setTwoStepVerificationCode('123456');
-
-        // Then
-        $this->assertEquals('123456', $user->getTwoStepVerificationCode(), 'Should return the two step verification code');
-    }
-
     public function testToStringWithName()
     {
         // Given
