@@ -8,8 +8,8 @@ php:
 env:
   - SYMFONY_VERSION=2.3.*
   - SYMFONY_VERSION=2.4.*
-  - SYMFONY_VERSION=dev-develop
 
 before_script:
+  - composer selfupdate
   - composer require symfony/symfony:${SYMFONY_VERSION} --no-update
   - composer install --dev --prefer-source
